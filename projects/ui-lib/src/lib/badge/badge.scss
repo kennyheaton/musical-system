@@ -1,0 +1,93 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-full;
+  white-space: nowrap;
+
+  // Sizes
+  &--sm {
+    padding: 2px $spacing-xs;
+    font-size: $font-size-xs;
+    min-height: 1.25rem;
+  }
+
+  &--md {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+    min-height: 1.5rem;
+  }
+
+  &--lg {
+    padding: $spacing-xs $spacing-md;
+    font-size: $font-size-md;
+    min-height: 1.75rem;
+  }
+
+  // Variants
+  &--primary {
+    background-color: $primary-100;
+    color: $primary-800;
+  }
+
+  &--secondary {
+    background-color: $secondary-100;
+    color: $secondary-800;
+  }
+
+  &--success {
+    background-color: lighten-color($success-500, 40%);
+    color: darken-color($success-500, 20%);
+  }
+
+  &--warning {
+    background-color: lighten-color($warning-500, 35%);
+    color: darken-color($warning-500, 25%);
+  }
+
+  &--error {
+    background-color: lighten-color($error-500, 35%);
+    color: darken-color($error-500, 10%);
+  }
+
+  &--info {
+    background-color: $primary-100;
+    color: $primary-800;
+  }
+
+  &--dot {
+    padding: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    min-height: 0;
+
+    &.ui-badge--primary {
+      background-color: $primary-600;
+    }
+
+    &.ui-badge--secondary {
+      background-color: $secondary-600;
+    }
+
+    &.ui-badge--success {
+      background-color: $success-500;
+    }
+
+    &.ui-badge--warning {
+      background-color: $warning-500;
+    }
+
+    &.ui-badge--error {
+      background-color: $error-500;
+    }
+
+    &.ui-badge--info {
+      background-color: $info-500;
+    }
+  }
+}

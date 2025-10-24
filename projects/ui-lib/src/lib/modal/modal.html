@@ -1,0 +1,40 @@
+<div [class]="modalClasses" (click)="handleBackdropClick()" *ngIf="isOpen">
+  <div class="ui-modal__backdrop"></div>
+
+  <div [class]="contentClasses" (click)="handleContentClick($event)">
+    <button
+      *ngIf="showCloseButton"
+      class="ui-modal__close"
+      (click)="close()"
+      aria-label="Close modal"
+      type="button"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 5L5 15M5 5L15 15"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
+
+    <div class="ui-modal__header" *ngIf="hasHeader">
+      <ng-content select="[modal-header]"></ng-content>
+    </div>
+
+    <div class="ui-modal__body">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="ui-modal__footer" *ngIf="hasFooter">
+      <ng-content select="[modal-footer]"></ng-content>
+    </div>
+  </div>
+</div>

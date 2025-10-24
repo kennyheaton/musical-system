@@ -1,0 +1,78 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.ui-card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  transition: all $transition-base;
+
+  // Variants
+  &--default {
+    border: 1px solid $gray-200;
+  }
+
+  &--outlined {
+    border: 2px solid $gray-300;
+    box-shadow: none;
+  }
+
+  &--elevated {
+    box-shadow: $shadow-lg;
+    border: none;
+  }
+
+  // Padding variants
+  &--padding-none {
+    .ui-card__body {
+      padding: 0;
+    }
+  }
+
+  &--padding-sm {
+    .ui-card__body {
+      padding: $spacing-sm;
+    }
+  }
+
+  &--padding-md {
+    .ui-card__body {
+      padding: $spacing-lg;
+    }
+  }
+
+  &--padding-lg {
+    .ui-card__body {
+      padding: $spacing-xl;
+    }
+  }
+
+  &--hoverable {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-xl;
+    }
+  }
+
+  &__header {
+    padding: $spacing-lg;
+    padding-bottom: $spacing-md;
+    border-bottom: 1px solid $gray-200;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-lg;
+  }
+
+  &__body {
+    flex: 1;
+    padding: $spacing-lg;
+  }
+
+  &__footer {
+    padding: $spacing-lg;
+    padding-top: $spacing-md;
+    border-top: 1px solid $gray-200;
+    background-color: $gray-50;
+  }
+}

@@ -1,0 +1,83 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.ui-input {
+  display: inline-flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $gray-700;
+    display: block;
+  }
+
+  &__required {
+    color: $error-500;
+    margin-left: 2px;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__field {
+    @include input-base;
+    border-radius: $border-radius-md;
+
+    &--sm {
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-size-sm;
+      min-height: 2rem;
+    }
+
+    &--md {
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-md;
+      min-height: 2.5rem;
+    }
+
+    &--lg {
+      padding: $spacing-md $spacing-lg;
+      font-size: $font-size-lg;
+      min-height: 3rem;
+    }
+
+    &--error {
+      border-color: $error-500;
+
+      &:focus {
+        border-color: $error-500;
+        box-shadow: 0 0 0 3px rgba($error-500, 0.1);
+      }
+    }
+
+    &--disabled {
+      background-color: $gray-100;
+      cursor: not-allowed;
+      color: $gray-500;
+    }
+
+    &::placeholder {
+      color: $gray-400;
+    }
+  }
+
+  &__message {
+    font-size: $font-size-sm;
+    min-height: 1.25rem;
+  }
+
+  &__error {
+    color: $error-500;
+  }
+
+  &__helper {
+    color: $gray-600;
+  }
+}
