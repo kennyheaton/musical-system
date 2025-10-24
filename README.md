@@ -56,6 +56,25 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## 📖 Documentation & Deployment
+
+### Storybook Documentation
+
+The component documentation is automatically built and deployed to GitHub Pages on every push to the main branch.
+
+- **Live Documentation**: Visit the [Storybook documentation site](https://kennyheaton.github.io/musical-system/) to explore all components
+- **Local Development**: Run `npm run storybook` to view components locally at `http://localhost:6006`
+
+### Building Storybook
+
+To build the static Storybook site:
+
+```bash
+npm run build-storybook
+```
+
+The static files will be generated in `dist/storybook/ui-components/`.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
